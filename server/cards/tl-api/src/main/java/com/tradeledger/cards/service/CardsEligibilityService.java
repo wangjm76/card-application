@@ -13,7 +13,6 @@ public class CardsEligibilityService{
     }
 
     public EligibilityResponse checkEligibilityFor(Applicant applicant){
-        EligibilityResponse result = thirdPartyClient.check(applicant);
-        return result;
+        return thirdPartyClient.check(applicant);
     }
 }
