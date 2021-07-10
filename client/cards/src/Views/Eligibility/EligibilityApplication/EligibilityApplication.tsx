@@ -5,26 +5,21 @@ import styled from "styled-components";
 import FormInput from "../../../DesignSystem/Form/FormInput";
 import SubmitButton from "../../../DesignSystem/Form/SubmitButton";
 import Title from "../../../DesignSystem/Title";
+import {EligibilityApplicationProps, FormValues} from "../Eligibility";
 
 const FormWrapper = styled.div`
   flex: 1 1 auto;
   width: 100%;
 `;
 
-interface FormValues {
-  name: string;
-  email: string;
-  address: string;
-}
-
-const EligibilityApplication = () => {
+const EligibilityApplication :React.FC<EligibilityApplicationProps> = (props) => {
   const { handleChange, handleSubmit, values } = useFormik<FormValues>({
     initialValues: {
       name: "",
       email: "",
       address: "",
     },
-    onSubmit: (values) => console.log(values),
+    onSubmit: (values) => props.onSubmit(values)
   });
   return (
     <FormWrapper>

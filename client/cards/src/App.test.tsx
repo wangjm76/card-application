@@ -1,9 +1,11 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
 import App from './App';
+import { shallow } from 'enzyme';
+import Eligibility from "./Views/Eligibility";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('<App />', () => {
+  it(`should render app with Eligiblity component`, () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(Eligibility)).toHaveLength(1);
+  });
 });

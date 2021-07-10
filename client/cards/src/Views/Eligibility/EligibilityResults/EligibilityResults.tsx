@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Card from "../../../DesignSystem/Card";
+import {EligibilityResult} from "../Eligibility";
 
 const ResultsWrapper = styled.div`
   flex: 1 1 auto;
@@ -10,8 +12,20 @@ const ResultsWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const EligibilityResults = () => {
-  return <ResultsWrapper></ResultsWrapper>;
+const EligibilityResults : React.FC<EligibilityResult> = ({eligibleCards,error } : EligibilityResult ) => {
+  return <ResultsWrapper>
+    {(eligibleCards !== undefined && eligibleCards.length > 0) &&
+        eligibleCards.map((card,index) => {
+          return <Card key={index}>{card}</Card>;
+        })
+    }
+    {(eligibleCards !== undefined && eligibleCards.length === 0) &&
+       <Card>No Eligible Card</Card>
+    }
+    {error !== undefined &&
+      <Card>{error}</Card>
+    }
+  </ResultsWrapper>;
 };
 
 export default EligibilityResults;
