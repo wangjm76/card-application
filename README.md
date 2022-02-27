@@ -30,16 +30,6 @@ The Tradeledger APIs should interface with the Thirdparty, sending an eligibilit
 
 ## Completing the exercise
 
-### Submission
-
-1. Fork the repo to your own repository or setup provided _.zip_ project into your own repository.
-2. Complete the exercise.
-3. Add [TL-Recruitment](https://github.com/TL-Recruitment) Github user to read your repository and/or provide a link to your repo with the completed task
-
-### Duration
-
-You should spend around ~1.5hrs on this task. You may spend longer if you wish, but ensure you think about which are the most critical pieces to complete first.
-
 ## How to Run
 
 Open the project with IntelliJ or Eclipse or any other IDE of your choice
